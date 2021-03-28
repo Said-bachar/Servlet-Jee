@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>TPServlet</display-name>
+  
+
+<servlet>
+ <servlet-name>mainServlet</servlet-name>
+ <servlet-class>myCommands.MyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>mainServlet</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<servlet-name>inscrire</servlet-name>
+<servlet-class>myCommands.InscriptionClient</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>inscrire</servlet-name>
+<url-pattern>/servlet/sinscrire</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>acheter</servlet-name>
+<servlet-class>myCommands.AfficherLesDisques</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>acheter</servlet-name>
+<url-pattern>/servlet/achat</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>commander</servlet-name>
+<servlet-class>myCommands.CommanderUnDisque</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>commander</servlet-name>
+<url-pattern>/servlet/commande</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>enregistrer</servlet-name>
+<servlet-class>myCommands.EnregistrerCommande</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>enregistrer</servlet-name>
+<url-pattern>/servlet/enregistre</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>vider</servlet-name>
+<servlet-class>myCommands.ViderPanier</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>vider</servlet-name>
+<url-pattern>/servlet/vider</url-pattern>
+</servlet-mapping>
+
+
+
+<filter>
+<filter-name>portier</filter-name>
+<filter-class>myCommands.FiltreAutorisation</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>portier</filter-name>
+<servlet-name>acheter</servlet-name>
+</filter-mapping>
+<filter-mapping>
+<filter-name>portier</filter-name>
+<servlet-name>commander</servlet-name>
+</filter-mapping>
+
+
+
+</web-app>
